@@ -22,13 +22,13 @@ namespace semana6
         {
             try
             {
-                WebClient cliente = new WebClient();
+                WebClient estudiante = new WebClient();
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("codigo", txtId.Text);
                 parametros.Add("codigo", txtNombre.Text);
                 parametros.Add("codigo", txtApellido.Text);
                 parametros.Add("codigo", txtEdad.Text);
-                cliente.UploadValues("http://192.168.22.15/moviles/post.php", "POST", parametros);
+                estudiante.UploadValues("http://192.168.17.55/moviles/post.php", "POST", parametros);
 
             }
             catch(Exception ex)
@@ -37,13 +37,7 @@ namespace semana6
 
             }
 
-            WebClient cliente = new WebClient();
-            var parametros = new System.Collections.Specialized.NameValueCollection();
-            parametros.Add("codigo", txtId.Text);
-            parametros.Add("codigo", txtNombre.Text);
-            parametros.Add("codigo", txtApellido.Text);
-            parametros.Add("codigo", txtEdad.Text);
-            cliente.UploadValues("http://192.168.22.15/moviles/post.php", "POST", parametros);
+           
 
         }
 

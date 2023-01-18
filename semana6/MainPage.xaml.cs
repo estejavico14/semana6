@@ -14,7 +14,7 @@ namespace semana6
     public partial class MainPage : ContentPage
     {
         private const string Url = "http://192.168.22.15/moviles/post.php";
-        private readonly HttpClient cliente = new HttpClient();
+        private readonly HttpClient estudiante = new HttpClient();
         private ObservableCollection<semana6.Datos> post;
         public MainPage()
         {
@@ -24,9 +24,9 @@ namespace semana6
 
         public async void obtener()
         {
-            var content = await cliente.GetStringAsync(url);
-            List<semana6.Datos> posts = JsonConvert.DeserializeObject<List<semana6.Datos>>();
-            posts = new ObservableCollection<semana6.Datos>(posts);
+            var content = await estudiante.GetStringAsync(Url);
+            List<semana6.Datos> posts = JsonConvert.DeserializeObject<List<semana6.Datos>>(content);
+            post = new ObservableCollection<semana6.Datos>(posts);
             MyListView.ItemsSource = post;
 
         }
@@ -41,11 +41,12 @@ namespace semana6
             Navigation.PushAsync(new Registro());
         }
 
-        private void btnGet_Clicked(object sender, EventArgs e)
-        {
-            var content = await client.GetStringAsync(Url);
-            List<semana6.Ws.Datos> post = JsonConvert.DeserializeObject<List<semana6.Ws.Datos>>(content);
-            _post = new ObservableCollection<semana6.Ws.Datos>(post);
-        }
+       // private async void btnGet_Clicked(object sender, EventArgs e)
+       // {
+           // var content = await estudiante.GetStringAsync(Url);
+            //List<semana6.Datos> post = JsonConvert.DeserializeObject<List<semana6.Datos>>(content);
+            //post = new ObservableCollection<semana6.Datos>(posts);
+            //MyListView.ItemsSource = post;
+        //}
     }
 }

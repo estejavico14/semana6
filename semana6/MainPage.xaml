@@ -21,7 +21,7 @@
                         <StackLayout>
                             <Label x:Name="lblnombre" Text="{Binding nombre }">
                             </Label>
-                            <Label x:Name="lblapellido" Text="{Binding nombre }">
+                            <Label x:Name="lblapellido" Text="{Binding apellido }">
                             </Label>
                         </StackLayout>
                     </ViewCell>
